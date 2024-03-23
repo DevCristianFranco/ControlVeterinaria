@@ -55,7 +55,7 @@ namespace CRUDWindFormsMVP.Views
             {
                 EditEvent?.Invoke(this, EventArgs.Empty);
                 tabControl1.TabPages.Remove(tabPagePetList);
-               tabControl1.TabPages.Add(tabPagePetDetail);
+                tabControl1.TabPages.Add(tabPagePetDetail);
                 tabPagePetDetail.Text = "Edit new pet";
             };
 
@@ -175,6 +175,14 @@ namespace CRUDWindFormsMVP.Views
             return instance;
         }
 
- 
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tapPagePetList_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

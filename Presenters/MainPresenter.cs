@@ -7,6 +7,7 @@ using CRUDWindFormsMVP.Views;
 using CRUDWindFormsMVP.Models;
 using CRUDWindFormsMVP._Repositories;
 using System.Windows.Forms;
+using CRUDWindFormsMVP.Presenters.Common;
 
 namespace CRUDWindFormsMVP.Presenters
 {
@@ -22,6 +23,7 @@ namespace CRUDWindFormsMVP.Presenters
             this.mainView = mainView;
             this.sqlConnectionString = sqlConnectionString;
             this.mainView.ShowPetView += ShowPetsView;
+            this.mainView.Showcreatedby += Showcreatedby;
         }
 
         private void ShowPetsView(object sender, EventArgs e)
@@ -30,5 +32,12 @@ namespace CRUDWindFormsMVP.Presenters
             IPetRepository repository = new PetRepository(sqlConnectionString);
             new PetPresenter(view, repository);
         }
+
+        private void Showcreatedby (object sender, EventArgs e)
+        {
+            ICreatedBy view = CreatedBy.GetInstance((MainView)mainView);
+            new CreatedByPresenter (view);
+        }
+
     }
 }

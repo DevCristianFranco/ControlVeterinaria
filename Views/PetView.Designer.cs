@@ -62,18 +62,20 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(40, 20);
+            this.label1.Location = new System.Drawing.Point(318, 18);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(65, 25);
             this.label1.TabIndex = 0;
             this.label1.Text = "PETS";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.panel1.Controls.Add(this.btnClose);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.ForeColor = System.Drawing.SystemColors.Control;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(670, 55);
@@ -82,6 +84,8 @@
             // btnClose
             // 
             this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnClose.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnClose.Location = new System.Drawing.Point(644, 0);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(26, 23);
@@ -100,10 +104,12 @@
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(670, 420);
+            this.tabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabControl1.TabIndex = 2;
             // 
             // tapPagePetDetail
             // 
+            this.tapPagePetDetail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.tapPagePetDetail.Controls.Add(this.txtPetColour);
             this.tapPagePetDetail.Controls.Add(this.txtPetType);
             this.tapPagePetDetail.Controls.Add(this.txtPetName);
@@ -120,7 +126,6 @@
             this.tapPagePetDetail.Size = new System.Drawing.Size(662, 394);
             this.tapPagePetDetail.TabIndex = 0;
             this.tapPagePetDetail.Text = "Pet Detail";
-            this.tapPagePetDetail.UseVisualStyleBackColor = true;
             // 
             // txtPetColour
             // 
@@ -173,6 +178,7 @@
             // lblPetColour
             // 
             this.lblPetColour.AutoSize = true;
+            this.lblPetColour.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.lblPetColour.Location = new System.Drawing.Point(27, 132);
             this.lblPetColour.Name = "lblPetColour";
             this.lblPetColour.Size = new System.Drawing.Size(56, 13);
@@ -182,6 +188,7 @@
             // lblPetType
             // 
             this.lblPetType.AutoSize = true;
+            this.lblPetType.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.lblPetType.Location = new System.Drawing.Point(179, 81);
             this.lblPetType.Name = "lblPetType";
             this.lblPetType.Size = new System.Drawing.Size(50, 13);
@@ -191,6 +198,7 @@
             // lblPetName
             // 
             this.lblPetName.AutoSize = true;
+            this.lblPetName.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.lblPetName.Location = new System.Drawing.Point(27, 81);
             this.lblPetName.Name = "lblPetName";
             this.lblPetName.Size = new System.Drawing.Size(54, 13);
@@ -200,6 +208,7 @@
             // lblPetId
             // 
             this.lblPetId.AutoSize = true;
+            this.lblPetId.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.lblPetId.Location = new System.Drawing.Point(27, 28);
             this.lblPetId.Name = "lblPetId";
             this.lblPetId.Size = new System.Drawing.Size(37, 13);
@@ -208,6 +217,7 @@
             // 
             // tapPagePetList
             // 
+            this.tapPagePetList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.tapPagePetList.Controls.Add(this.dataGridView1);
             this.tapPagePetList.Controls.Add(this.btnDelete);
             this.tapPagePetList.Controls.Add(this.btnEdit);
@@ -221,13 +231,14 @@
             this.tapPagePetList.Size = new System.Drawing.Size(662, 394);
             this.tapPagePetList.TabIndex = 1;
             this.tapPagePetList.Text = "Pet Lists";
-            this.tapPagePetList.UseVisualStyleBackColor = true;
+            this.tapPagePetList.Click += new System.EventHandler(this.tapPagePetList_Click);
             // 
             // dataGridView1
             // 
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(26, 45);
             this.dataGridView1.Name = "dataGridView1";
@@ -257,6 +268,9 @@
             // btnAddNew
             // 
             this.btnAddNew.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAddNew.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAddNew.FlatAppearance.BorderSize = 0;
+            this.btnAddNew.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnAddNew.Location = new System.Drawing.Point(567, 48);
             this.btnAddNew.Name = "btnAddNew";
             this.btnAddNew.Size = new System.Drawing.Size(75, 23);
@@ -286,6 +300,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.label5.Location = new System.Drawing.Point(23, 3);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(63, 13);
